@@ -7,7 +7,7 @@ git clone https://github.com/Cvellle/Ajax-task.git
 
 ```
 
-## Create table with:
+## Create table with in test database:
 
 ```
 CREATE TABLE usersNikola ( user_id int(10) NOT NULL AUTO_INCREMENT,
