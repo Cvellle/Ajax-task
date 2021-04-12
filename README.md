@@ -1,4 +1,4 @@
-# nstructions
+# Instructions
 
 ## Download the folder
 
@@ -26,11 +26,6 @@ CREATE TABLE usersNikola ( user_id int(10) NOT NULL AUTO_INCREMENT,
                     KEY address (last_name),
                     KEY city (city)
                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-```
-
-```
-:rocket:
-
 ```
 
 ## Open it with url:
