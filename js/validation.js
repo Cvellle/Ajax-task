@@ -1,9 +1,9 @@
-function validation() {
-  const formElements = document.querySelectorAll(".validationCheck");
-  const selectField = document.querySelector("#selectField");
-  const submitBtn = document.querySelector(".submitBtn");
-  const inputs = document.querySelectorAll("input");
+const formElements = document.querySelectorAll(".validationCheck");
+const selectField = document.querySelector("#selectField");
+const submitBtn = document.querySelector(".submitBtn");
+const inputs = document.querySelectorAll("input");
 
+function validation() {
   const makeSelectOptions = () => {
     let selectOptions = "";
     const date = new Date();
@@ -17,7 +17,6 @@ function validation() {
 
   const checkCondition = (e) => {
     let currentValue = e.target.value;
-    e.stopPropagation();
 
     const addValid = () => {
       e.target.classList.add("is-valid");
@@ -67,7 +66,7 @@ function validation() {
       return;
     }
 
-    let checkAllInputs = [...formElements].every((el) =>
+    let checkValidInputs = [...formElements].every((el) =>
       el.classList.contains("is-valid")
     );
 
@@ -75,17 +74,13 @@ function validation() {
       el.value == " "
     );
 
-    if (checkAllInputs && !checkBlank) {
+    if (checkValidInputs && !checkBlank) {
       submitBtn.disabled = false;
     }
-
-    checkAllInputs();
   };
 
   makeSelectOptions();
-  window.addEventListener("blur", checkCondition);
   window.addEventListener("change", checkCondition);
-  window.addEventListener("keyup", checkCondition);
 }
 
 window.addEventListener("load", validation);
